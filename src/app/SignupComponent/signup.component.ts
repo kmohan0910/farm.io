@@ -13,6 +13,7 @@ import {
 })
 export class Signup implements OnInit {
   form: FormGroup;
+  loginmode: boolean;
   constructor() {}
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -23,6 +24,9 @@ export class Signup implements OnInit {
   }
   onsubmit() {
     console.log('here', this.form);
+  }
+  onSwitch(){
+    this.loginmode=!this.loginmode;
   }
   onClear() {
     // this.form.get('email')?.clearValidators() removing specific validators
