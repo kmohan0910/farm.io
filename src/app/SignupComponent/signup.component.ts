@@ -5,6 +5,7 @@ import {
   EmailValidator,
   Validators,
 } from '@angular/forms';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'signup',
@@ -14,7 +15,7 @@ import {
 export class Signup implements OnInit {
   form: FormGroup;
   loginmode: boolean;
-  constructor() {}
+  constructor(private AutheService :AuthService) {}
   ngOnInit(): void {
     this.form = new FormGroup({
       username: new FormControl(null),
@@ -23,7 +24,8 @@ export class Signup implements OnInit {
     });
   }
   onsubmit() {
-    console.log('here', this.form);
+
+    this.AutheService.signup(this.form.value.email, this.form.value.password)
   }
   onSwitch(){
     this.loginmode=!this.loginmode;

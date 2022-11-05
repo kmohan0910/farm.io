@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { Signup } from './SignupComponent/signup.component';
 import { HeaderComponentComponent } from './shared/header-component/header-component.component';
 import { HomeComponentComponent } from './HomeComponent/home-component/home-component.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HomeComponentComponent } from './HomeComponent/home-component/home-comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
