@@ -29,8 +29,11 @@ export class Signup implements OnInit {
     })
   }
   onsubmit() {
-
-    this.AutheService.signup(this.form.value.email, this.form.value.password)
+    if(!this.loginmode){
+      console.log("login")
+      this.AutheService.login(this.form.value.email, this.form.value.password)
+    }else{ 
+    this.AutheService.signup(this.form.value.email, this.form.value.password)}
   }
   onSwitch(){
     this.loginmode=!this.loginmode;

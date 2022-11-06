@@ -16,8 +16,8 @@
       <p *ngIf="error" class="text-danger bg-dark" style="margin-top: 5px;">{{error}}</p>
 
       <button class="btn btn-primary" type="submit">Submit</button>
-      <button class="btn btn-danger" (click)="onClear()">Clear</button>
-      |<button class="btn btn-secondary" (click)="onSwitch()">Switch to {{!loginmode?"Signup": "Login"}}</button>
+      <button class="btn btn-danger" type="button" (click)="onClear()">Clear</button><!--Add type as button to stop submit trigger-->
+      |<button class="btn btn-secondary"type="button" (click)="onSwitch()">Switch to {{!loginmode?"Signup": "Login"}}</button>
     </form>
   </div>
   </div>
