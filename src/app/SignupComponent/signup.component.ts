@@ -15,6 +15,7 @@ import { AuthService } from './auth.service';
 export class Signup implements OnInit {
   form: FormGroup;
   loginmode: boolean;
+  error: string = ""
   constructor(private AutheService :AuthService) {}
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -22,6 +23,10 @@ export class Signup implements OnInit {
       email: new FormControl(null),
       password: new FormControl(null),
     });
+    this.AutheService.error.subscribe(x=>{
+      this.error=x;
+      console.log(x,this.error)
+    })
   }
   onsubmit() {
 

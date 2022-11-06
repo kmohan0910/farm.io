@@ -13,6 +13,7 @@
         <label for="username">Password</label>
         <input class="form-control" type="password" name="password"  formControlName="password"/>
       </div>
+      <p *ngIf="error" class="text-danger bg-dark" style="margin-top: 5px;">{{error}}</p>
 
       <button class="btn btn-primary" type="submit">Submit</button>
       <button class="btn btn-danger" (click)="onClear()">Clear</button>
