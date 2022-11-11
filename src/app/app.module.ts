@@ -8,6 +8,7 @@ import { Signup } from './SignupComponent/signup.component';
 import { HeaderComponentComponent } from './shared/header-component/header-component.component';
 import { HomeComponentComponent } from './HomeComponent/home-component/home-component.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CatalogComponentComponent } from './catalog/catalog-component/catalog-component.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     Signup,
     HeaderComponentComponent,
     HomeComponentComponent,
+    CatalogComponentComponent,
   ],
   imports: [
     BrowserModule,
