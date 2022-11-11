@@ -1,4 +1,13 @@
 <p>Catalog of Products</p>
 <div class="container">
-    <h1 *ngFor="let item of products" class="item {{item}}">{{item}}</h1>
+    
+
+    <div class="card" style="width: 18rem;" *ngFor="let item of products" class="item {{item}}">
+        <img class="card-img-top" src="../../../assets/farmer.png" width="40" height="auto" alt="Card image cap">
+        <div class="card-body">
+            <h1 class="item {{item}}">{{item}}</h1>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut </p>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+      </div>
 </div>
