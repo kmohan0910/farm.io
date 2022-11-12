@@ -4,26 +4,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Signup } from './SignupComponent/signup.component';
+
 import { HeaderComponentComponent } from './shared/header-component/header-component.component';
-import { HomeComponentComponent } from './HomeComponent/home-component/home-component.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { CatalogComponentComponent } from './catalog/catalog-component/catalog-component.component';
+import { FeatureModule } from './SignupComponent/feature.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    Signup,
     HeaderComponentComponent,
-    HomeComponentComponent,
     CatalogComponentComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FeatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]
