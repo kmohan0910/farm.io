@@ -1,6 +1,6 @@
 <div class="container">
   <div class="col-md-4 col-md-offset-4">
-    <form  (ngSubmit)="onsubmit()">
+    <form [formGroup]="form" (ngSubmit)="onsubmit()">
       <div class="form-group" *ngIf="loginmode">
         <label for="username" >Username</label>
         <input class="form-control" type="text" name="username" formControlName="username" />

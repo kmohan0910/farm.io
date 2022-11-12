@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponentComponent } from './shared/header-component/header-component.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { CatalogComponentComponent } from './catalog/catalog-component/catalog-component.component';
 import { FeatureModule } from './FeaturesModules/feature.module';
 
 
@@ -16,8 +15,7 @@ import { FeatureModule } from './FeaturesModules/feature.module';
   declarations: [
     AppComponent,
     HeaderComponentComponent,
-    CatalogComponentComponent,
-    
+
   ],
   imports: [
     BrowserModule,
