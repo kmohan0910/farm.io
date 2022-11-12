@@ -9,7 +9,7 @@ import { HeaderComponentComponent } from './shared/header-component/header-compo
 
 import { HttpClientModule } from '@angular/common/http';
 import { CatalogComponentComponent } from './catalog/catalog-component/catalog-component.component';
-import { FeatureModule } from './SignupComponent/feature.module';
+import { FeatureModule } from './FeaturesModules/feature.module';
 
 
 @NgModule({

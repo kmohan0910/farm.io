@@ -1,14 +1,14 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
-import { HomeComponentComponent } from "../HomeComponent/home-component.component";
+import { HomeComponent } from "./HomeComponent/home-component.component";
 import { FeatureRoutingModule } from "./feature.routing.module";
-import { Signup } from "./signup.component";
+import { Signup } from "./SignupComponent/signup.component";
 
 
 @NgModule({
 imports: [FeatureRoutingModule ,CommonModule, ReactiveFormsModule],// importing loaded childs here
-declarations:[Signup , HomeComponentComponent]// declaring components here
+declarations:[Signup , HomeComponent]// declaring components here
 })
 
 export class FeatureModule {

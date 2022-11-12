@@ -1,5 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { AuthService } from 'src/app/SignupComponent/auth.service';
+import { AuthService } from 'src/app/FeaturesModules/SignupComponent/auth.service';
 
 @Component({
   selector: 'app-header-component',
