@@ -9,12 +9,14 @@ import { HeaderComponentComponent } from './shared/header-component/header-compo
 
 import { HttpClientModule } from '@angular/common/http';
 import { FeatureModule } from './FeaturesModules/feature.module';
+import { CatalogComponentComponent } from './catalog/catalog-component/catalog-component.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponentComponent,
+    CatalogComponentComponent
 
   ],
   imports: [

@@ -3,10 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CatalogComponentComponent } from './catalog/catalog-component/catalog-component.component';
 
 const route1: Routes=[
-  {path: '' ,  loadChildren: ()=> import('./FeaturesModules/feature.module').then(m=>m.FeatureModule)},
-  // {path: "catalog" , component: CatalogComponentComponent },
-  // {path: "login", loadChildren: ()=> import('./FeaturesModules/feature.module').then(m=>m.FeatureModule)},
-  //  {path: "home",loadChildren: ()=> import('./FeaturesModules/feature.module').then(m=>m.FeatureModule)}
+  {path:'catalog' , component: CatalogComponentComponent},
+  {path: 'home' ,  loadChildren: ()=> import('./FeaturesModules/feature.module').then(m=>m.FeatureModule)}
 ]
 
 @NgModule({
