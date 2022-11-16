@@ -7,9 +7,9 @@ import { Signup } from './FeaturesModules/SignupComponent/signup.component';
 
 const route1: Routes=[
   {path:'' , redirectTo  : '/login' , pathMatch: 'full'},
-  {path: 'home' , component: HomeComponent  },
-  {path: 'login' ,  component: Signup},
-  {path:'catalog' ,component: CatalogComponentComponent}
+  {path: 'home' , component: HomeComponent , canActivate: [AuthGuard] },
+  {path: 'login' ,  component: Signup },
+  {path:'catalog' ,component: CatalogComponentComponent ,  canActivate: [AuthGuard]}
 ]
 
 @NgModule({
