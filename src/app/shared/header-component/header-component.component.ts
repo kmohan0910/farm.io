@@ -6,21 +6,20 @@ import { AuthService } from 'src/app/FeaturesModules/SignupComponent/auth.servic
   templateUrl: './header-component.component.html',
   styleUrls: ['./header-component.component.css']
 })
-export class HeaderComponentComponent implements OnInit , OnChanges{
+export class HeaderComponentComponent implements OnInit {
   isLoggedin: boolean
   constructor(private auth: AuthService) {
     
    }
-  ngOnChanges(changes: SimpleChanges): void {
-      console.log(this.isLoggedin)
-  }
   logout(){
     this.isLoggedin=!this.isLoggedin
     this.auth.isLoggedin.next(false)
     localStorage.setItem('loggedin' , 'false')
     console.log('logout' , this.isLoggedin)
   }
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log('headerng')
+    this.auth.isLoggedin.subscribe(val=>console.log(val))
     this.auth.isLoggedin.subscribe(x=>{
       this.isLoggedin=x
       console.log(x, "inHeader")
