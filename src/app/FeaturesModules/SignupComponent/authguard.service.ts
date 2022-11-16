@@ -4,7 +4,9 @@ import { AuthService } from "./auth.service";
 
 export class AuthGuard implements CanActivate{
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-     return  this.auth.isLoggedin ? true : this.router.navigate(['/home'])
+     return  this.auth.isLoggedin.subscribe( val=>{
+        return val
+     }) ? true : this.router.navigate(['/home'])
     }
     constructor(private auth: AuthService , private router : Router){
 

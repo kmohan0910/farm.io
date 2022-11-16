@@ -14,6 +14,12 @@ export class HeaderComponentComponent implements OnInit , OnChanges{
   ngOnChanges(changes: SimpleChanges): void {
       console.log(this.isLoggedin)
   }
+  logout(){
+    this.isLoggedin=!this.isLoggedin
+    this.auth.isLoggedin.next(false)
+    localStorage.setItem('loggedin' , 'false')
+    console.log('logout' , this.isLoggedin)
+  }
   ngOnInit(): void {
     this.auth.isLoggedin.subscribe(x=>{
       this.isLoggedin=x

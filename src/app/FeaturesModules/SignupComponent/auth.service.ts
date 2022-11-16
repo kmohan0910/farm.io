@@ -12,18 +12,21 @@ export class AuthService {
 
   constructor(private http: HttpClient, private route : Router) {
     this.isLoggedin.next(false)
+    console.log(localStorage.getItem('loggedin'))
+    var st = localStorage.getItem('loggedin')
 
    }
 
-
+   logout(){
+    this.isLoggedin.next(false);
+   }
 
   signup(email: string, password: string) {
     this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC3qsvT9MAzAQxFjAz3083kgLqqL2xkO38', 
     { email: email, password: password, returnSecureToken: true }).subscribe(ans =>{
       this.route.navigate(['home'])
-      console.log(this.isLoggedin)
       this.isLoggedin.next(true)
-      console.log(this.isLoggedin)
+      localStorage.setItem("loggedin" , "true")
     }
       ,error=> {
         console.log(error)
@@ -39,9 +42,10 @@ export class AuthService {
       password: password,
     returnSecureToken : true}).subscribe( ans=>{
       this.route.navigate(['home'])
-      console.log(this.isLoggedin)
       this.isLoggedin.next(true)
-      console.log(this.isLoggedin)
+      localStorage.setItem("loggedin" , "true")
+      console.log(localStorage.getItem('loggedin'))
+
 
     },error=> {
       console.log(error)

@@ -7,23 +7,20 @@
     <div class="collapse navbar-collapse my-lg-0"  style="justify-content: end;"  id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+          <a class="nav-link" *ngIf="isLoggedin" routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/catalog" routerLinkActive="active">Catalog</a>
+          <a  *ngIf="isLoggedin" class="nav-link" routerLink="/catalog" routerLinkActive="active">Catalog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cart</a>
+          <a *ngIf="isLoggedin" class="nav-link" routerLink="home">Cart</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" *ngIf="!isLoggedin else logout" routerLink="login" routerLinkActive="active" >Login</a>
+            <a class="nav-link" *ngIf="!isLoggedin " routerLink="login" routerLinkActive="active" >Login</a>
           </li>
-        <ng-template #logout>
           <li class="nav-item">
-            <a class="nav-link"  *ngIf="isLoggedin "  routerLink="login" (click)="isLoggedin=!isLoggedin" routerLinkActive="active">Logout</a>
+            <a class="nav-link" (click)="logout()" *ngIf="isLoggedin"  routerLink="login"  routerLinkActive="active">Logout</a>
           </li>
-
-        </ng-template>
       </ul>
     </div>
   </nav>
