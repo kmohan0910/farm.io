@@ -1,9 +1,15 @@
 .navbar{
-    background-color: #FFEFD6;
+    background-color: #0D4C92;
     margin-left:0px;
     margin-right:0px;
    
 }
 a{
-    color: cadetblue;
+    color: white;
+}
+
+.nav-link.active {
+    color: white;
+    background: rgb(60, 128, 218);
+
 }
