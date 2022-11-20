@@ -25,43 +25,43 @@ export class AuthService {
    }
 
   signup(email: string, password: string) {
-    // this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC3qsvT9MAzAQxFjAz3083kgLqqL2xkO38', 
-    // { email: email, password: password, returnSecureToken: true }).subscribe(ans =>{
-    //   this.route.navigate(['home'])
-    //   this.isLoggedin.next(true)
-    //   localStorage.setItem("loggedin" , "true")
-    // }
-    //   ,error=> {
-    //     console.log(error)
-    //     this.error.next(error.error.error.message)
-    //   })
+    this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC3qsvT9MAzAQxFjAz3083kgLqqL2xkO38', 
+    { email: email, password: password, returnSecureToken: true }).subscribe(ans =>{
       this.route.navigate(['home'])
       this.isLoggedin.next(true)
       localStorage.setItem("loggedin" , "true")
+    }
+      ,error=> {
+        console.log(error)
+        this.error.next(error.error.error.message)
+      })
+      // this.route.navigate(['home'])
+      // this.isLoggedin.next(true) 
+      // localStorage.setItem("loggedin" , "true")
       
       
   }
   login(email : string , password: string){
-    // this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC3qsvT9MAzAQxFjAz3083kgLqqL2xkO38',
-    // {
-    //   email: email,
-    //   password: password,
-    // returnSecureToken : true}).subscribe( ans=>{
-    //   this.route.navigate(['home'])
-    //   this.isLoggedin.next(true)
-    //   localStorage.setItem("loggedin" , "true")
-    //   console.log(localStorage.getItem('loggedin'))
+    this.http.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC3qsvT9MAzAQxFjAz3083kgLqqL2xkO38',
+    {
+      email: email,
+      password: password,
+    returnSecureToken : true}).subscribe( ans=>{
+      this.route.navigate(['home'])
+      this.isLoggedin.next(true)
+      localStorage.setItem("loggedin" , "true")
+      console.log(localStorage.getItem('loggedin'))
 
 
-    // },error=> {
-    //   console.log(error)
-    //   this.error.next(error.error.error.message)
-    // })
+    },error=> {
+      console.log(error)
+      this.error.next(error.error.error.message)
+    })
 
-    this.route.navigate(['home'])
-    this.isLoggedin.next(true)
-    localStorage.setItem("loggedin" , "true")
-    console.log(localStorage.getItem('loggedin'))
+    // this.route.navigate(['home'])
+    // this.isLoggedin.next(true)
+    // localStorage.setItem("loggedin" , "true")
+    // console.log(localStorage.getItem('loggedin'))
 
     }
   
