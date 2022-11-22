@@ -13,14 +13,15 @@ import { CatalogServiceService } from '../catalog-service.service';
 export class CatalogComponentComponent implements OnInit {
 
   constructor(private catalogService: CatalogServiceService) { }
-  products: string[] = ['Cabbage', 'Pottato', 'Tomato', 'Beans']
+  products: string[] = ['Cabbage', 'Pottato', 'Tomato']
 
-  ngOnInit(): void {
-
+  ngOnInit() {
+      this.catalogService.getitems()
+      this.catalogService.products.subscribe(res=>{
+        this.products= res
+      })
+      console.log(this.products, 'catalog')
+      }
     //this.products = this.catalogService.getitems()
-    console.log(this.products);
-
-  }
-
 }
 

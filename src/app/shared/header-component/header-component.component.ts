@@ -15,14 +15,14 @@ export class HeaderComponentComponent implements OnInit {
     this.isLoggedin=!this.isLoggedin
     this.auth.isLoggedin.next(false)
     localStorage.setItem('loggedin' , 'false')
-    console.log('logout' , this.isLoggedin)
+    //console.log('logout' , this.isLoggedin)
   }
   ngOnInit() {
     console.log('headerng')
     this.auth.isLoggedin.subscribe(val=>console.log(val))
     this.auth.isLoggedin.subscribe(x=>{
       this.isLoggedin=x
-      console.log(x, "inHeader")
+     // console.log(x, "inHeader")
     }
       )
   }

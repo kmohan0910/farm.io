@@ -17,7 +17,7 @@ export class AuthService {
 
    autologin(){
     var st = localStorage.getItem('loggedin')
-    console.log(st , 'autologin')
+    //console.log(st , 'autologin')
     return st
    }
    logout(){
@@ -50,7 +50,7 @@ export class AuthService {
       this.route.navigate(['home'])
       this.isLoggedin.next(true)
       localStorage.setItem("loggedin" , "true")
-      console.log(localStorage.getItem('loggedin'))
+     // console.log(localStorage.getItem('loggedin'))
 
 
     },error=> {

@@ -12,14 +12,14 @@ export class AuthGuard implements CanActivate{
         const value=this.auth.isLoggedin.subscribe( val=>{
             return val
          }) 
-         console.log(value , 'inside authGruard')
+         //console.log(value , 'inside authGruard')
          var l =localStorage.getItem('loggedin')
-         console.log(l , 'inside authGruard')
+        // console.log(l , 'inside authGruard')
         if (l=='true'){
             return true
         }
         else{
-            console.log('inside else')
+           // console.log('inside else')
             this.router.navigate(['login'])
             return false
     } 
